@@ -1,0 +1,20 @@
+<div ng-controller="vistamesasctrl as  vm">
+    <div class="flash-message" ng-if="flash">
+        <div id="error1" class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
+    </div>
+    <ng-map zoom="13" center="barcelona" style="height:500px" on-center-changed="centerCustomMarker()">
+        <marker ng-repeat="mesa in vm.mesas" id="custom-marker-{{$index}}" position="{{mesa.localizacion}}"
+                title="{{mesa.nombre}}" on-click="vm.showCustomMarker(event,'custom-marker-'+$index)"></marker>
+        <custom-marker ng-repeat="mesa in vm.mesas" id="custom-marker-{{$index}}" visible="false"
+                       position="{{mesa.localizacion}}" on-click="vm.closeCustomMarker()">
+            <img>
+            {{mesa.nombre}}<br/>
+            <img width="200" height="100" src="{{mesa.urlfoto}}"><br/>
+
+            {{mesa.localizacion}}<br/>
+
+            Si quieres ver los horarios disponible, haz click <a ng-click="horarios(mesa)">aquí</a>
+</div>
+</custom-marker>
+</ng-map>
+</div>

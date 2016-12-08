@@ -1,0 +1,181 @@
+<div id="vistacrearmesa" class="col-md-8">
+<table class="table" ng-model="partida">
+    <TR>
+        <th>
+            <div ng-if="mostrartitulo">
+                Selecciona un día
+            </div>
+            <div class="container">
+                <div pickadate="" ng-model="date" min-date="minDate"></div>
+            </div>
+        </th>
+        <th>
+            <TABLE id="vistacrearmesa" class="table table-hover" ng-if="mostrarhorarios">
+                <caption>Fecha seleccionada: {{date || '(Selecciona una fecha)'}}</caption>
+                <TR>
+                    <TH>Horas</TH>
+                    <TH>Usuario creador</TH>
+                    <TH>Usuario invitado</TH>
+                    <TH>Acciones</TH>
+                </TR>
+                <TR>
+                    <TD>08:00-09:00</TD>
+                    <TD>{{partida.P1.creador.login}}</TD>
+                    <TD>{{partida.P1.invitado.login}}</TD>
+                    <TD>
+                        <button type="button" class="btn btn-default" ng-show="partida.P1.creador.login == null"
+                                ng-click=crearpartida(p='P1')><span class="glyphicon glyphicon-plus"></span></button>
+                        <button type="button" class="btn btn-default"
+                                ng-hide="partida.P1.invitado.login != null || partida.P1.creador.login == null "
+                                ng-click="unirseapartida(p='P1')"><span class="glyphicon glyphicon-thumbs-up"></span>
+                        </button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>09:00-10:00</TD>
+                    <TD>{{partida.P2.creador.login}}</TD>
+                    <TD>{{partida.P2.invitado.login}}</TD>
+                    <TD>
+                        <button type="button" class="btn btn-default" ng-show="partida.P2.creador.login == null"
+                                ng-click=crearpartida(p='P2')><span class="glyphicon glyphicon-plus"></span></button>
+                        <button type="button" class="btn btn-default"
+                                ng-hide="partida.P2.invitado.login != null || partida.P2.creador.login == null "
+                                ng-click=unirseapartida(p='P2')><span class="glyphicon glyphicon-thumbs-up"></span>
+                        </button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>10:00-11:00</TD>
+                    <TD>{{partida.P3.creador.login}}</TD>
+                    <TD>{{partida.P3.invitado.login}}</TD>
+                    <TD>
+                        <button type="button" class="btn btn-default" ng-show="partida.P3.creador.login == null"
+                                ng-click=crearpartida(p='P3')><span class="glyphicon glyphicon-plus"></span></button>
+                        <button type="button" class="btn btn-default"
+                                ng-hide="partida.P3.invitado.login != null || partida.P3.creador.login == null "
+                                ng-click=unirseapartida(p='P3')><span class="glyphicon glyphicon-thumbs-up"></span>
+                        </button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>11:00-12:00</TD>
+                    <TD>{{partida.P4.creador.login}}</TD>
+                    <TD>{{partida.P4.invitado.login}}</TD>
+                    <TD>
+                        <button type="button" class="btn btn-default" ng-show="partida.P4.creador.login == null"
+                                ng-click=crearpartida(p='P4')><span class="glyphicon glyphicon-plus"></span></button>
+                        <button type="button" class="btn btn-default"
+                                ng-hide="partida.P4.invitado.login != null || partida.P4.creador.login == null "
+                                ng-click=unirseapartida(p='P4')><span class="glyphicon glyphicon-thumbs-up"></span>
+                        </button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>12:00-13:00</TD>
+                    <TD>{{partida.P5.creador.login}}</TD>
+                    <TD>{{partida.P5.invitado.login}}</TD>
+                    <TD>
+                        <button type="button" class="btn btn-default" ng-show="partida.P5.creador.login == null"
+                                ng-click=crearpartida(p='P5')><span class="glyphicon glyphicon-plus"></span></button>
+                        <button type="button" class="btn btn-default"
+                                ng-hide="partida.P5.invitado.login != null || partida.P5.creador.login == null "
+                                ng-click=unirseapartida(p='P5')><span class="glyphicon glyphicon-thumbs-up"></span>
+                        </button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>13:00-14:00</TD>
+                    <TD>{{partida.P6.creador.login}}</TD>
+                    <TD>{{partida.P6.invitado.login}}</TD>
+                    <TD>
+                        <button type="button" class="btn btn-default" ng-show="partida.P6.creador.login == null"
+                                ng-click=crearpartida(p='P6')><span class="glyphicon glyphicon-plus"></span></button>
+                        <button type="button" class="btn btn-default"
+                                ng-hide="partida.P6.invitado.login != null || partida.P6.creador.login == null "
+                                ng-click=unirseapartida(p='P6')><span class="glyphicon glyphicon-thumbs-up"></span>
+                        </button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>14:00-15:00</TD>
+                    <TD>{{partida.P7.creador.login}}</TD>
+                    <TD>{{partida.P7.invitado.login}}</TD>
+                    <TD>
+                        <button type="button" class="btn btn-default" ng-show="partida.P7.creador.login == null"
+                                ng-click=crearpartida(p='P7')><span class="glyphicon glyphicon-plus"></span></button>
+                        <button type="button" class="btn btn-default"
+                                ng-hide="partida.P7.invitado.login != null || partida.P7.creador.login == null "
+                                ng-click=unirseapartida(p='P7')><span class="glyphicon glyphicon-thumbs-up"></span>
+                        </button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>15:00-16:00</TD>
+                    <TD>{{partida.P8.creador.login}}</TD>
+                    <TD>{{partida.P8.invitado.login}}</TD>
+                    <TD>
+                        <button type="button" class="btn btn-default" ng-show="partida.P8.creador.login == null"
+                                ng-click=crearpartida(p='P8')><span class="glyphicon glyphicon-plus"></span></button>
+                        <button type="button" class="btn btn-default"
+                                ng-hide="partida.P8.invitado.login != null || partida.P8.creador.login == null "
+                                ng-click=unirseapartida(p='P8')><span class="glyphicon glyphicon-thumbs-up"></span>
+                        </button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>16:00-17:00</TD>
+                    <TD>{{partida.P9.creador.login}}</TD>
+                    <TD>{{partida.P9.invitado.login}}</TD>
+                    <TD>
+                        <button type="button" class="btn btn-default" ng-show="partida.P9.creador.login == null"
+                                ng-click=crearpartida(p='P9')><span class="glyphicon glyphicon-plus"></span></button>
+                        <button type="button" class="btn btn-default"
+                                ng-hide="partida.P9.invitado.login != null || partida.P9.creador.login == null "
+                                ng-click=unirseapartida(p='P9')><span class="glyphicon glyphicon-thumbs-up"></span>
+                        </button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>17:00-18:00</TD>
+                    <TD>{{partida.P10.creador.login}}</TD>
+                    <TD>{{partida.P10.invitado.login}}</TD>
+                    <TD>
+                        <button type="button" class="btn btn-default" ng-show="partida.P10.creador.login == null"
+                                ng-click=crearpartida(p='P10')><span class="glyphicon glyphicon-plus"></span></button>
+                        <button type="button" class="btn btn-default"
+                                ng-hide="partida.P10.invitado.login != null || partida.P10.creador.login == null "
+                                ng-click=unirseapartida(p='P10')><span class="glyphicon glyphicon-thumbs-up"></span>
+                        </button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>18:00-19:00</TD>
+                    <TD>{{partida.P11.creador.login}}</TD>
+                    <TD>{{partida.P11.invitado.login}}</TD>
+                    <TD>
+                        <button type="button" class="btn btn-default" ng-show="partida.P11.creador.login == null"
+                                ng-click=crearpartida(p='P11')><span class="glyphicon glyphicon-plus"></span></button>
+                        <button type="button" class="btn btn-default"
+                                ng-hide="partida.P11.invitado.login != null || partida.P11.creador.login == null "
+                                ng-click=unirseapartida(p='P11')><span class="glyphicon glyphicon-thumbs-up"></span>
+                        </button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>19:00-20:00</TD>
+                    <TD>{{partida.P12.creador.login}}</TD>
+                    <TD>{{partida.P12.invitado.login}}</TD>
+                    <TD>
+                        <button type="button" class="btn btn-default" ng-show="partida.P12.creador.login == null"
+                                ng-click=crearpartida(p='P12')><span class="glyphicon glyphicon-plus"></span></button>
+                        <button type="button" class="btn btn-default"
+                                ng-hide="partida.P12.invitado.login != null || partida.P12.creador.login == null "
+                                ng-click=unirseapartida(p='P12')><span class="glyphicon glyphicon-thumbs-up"></span>
+                        </button>
+                    </TD>
+                </TR>
+            </TABLE>
+        </th>
+    </TR>
+</table>
+</div>

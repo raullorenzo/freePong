@@ -1,0 +1,65 @@
+<div style="color:white" id="reg" class="col-md-6 col-md-offset-3">
+    <h2>Registro</h2>
+    <form name="form" ng-submit="registro()" role="form">
+        <div class="form-group" ng-class="{ 'has-error': form.nombre.$dirty && form.nombre.$error.required }">
+            <label for="nombre">First name</label>
+            <input type="text" name="nombre" id="nombre" class="form-control" ng-model="usuario.nombre" required/>
+            <span ng-show="form.nombre.$dirty && form.nombre.$error.required"
+                  class="help-block">El nombre es necesario</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.apellidos.$dirty && form.apellidos.$error.required }">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" name="apellidos" id="apellidos" class="form-control" ng-model="usuario.apellidos"
+                   required/>
+            <span ng-show="form.apellidos.$dirty && form.apellidos.$error.required" class="help-block">Los apellidos son necesarios</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="form-control" ng-model="usuario.email" required/>
+            <span ng-show="form.email.$dirty && form.email.$error.required"
+                  class="help-block">El e-mail es necesario</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.telefono.$dirty && form.email.$error.required }">
+            <label for="telefono">Telefono</label>
+            <input type="text" name="telefono" id="telefono" class="form-control" ng-model="usuario.telefono" required/>
+            <span ng-show="form.telefono.$dirty && form.telefono.$error.required" class="help-block">El teléfono es necesario</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.login.$dirty && form.login.$error.required }">
+            <label for="login">Username</label>
+            <input type="text" name="login" id="login" class="form-control" ng-model="usuario.login" required/>
+            <span ng-show="form.login.$dirty && form.login.$error.required"
+                  class="help-block">El username es necesario</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="usuario.password"
+                   required/>
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">El password es necesario</span>
+        </div>
+        <!--<div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Saldo</label>
+            <input type="saldo" name="saldo" class="form-control" id="disabledInput" type="text"
+                   ng-model="usuario.saldo" value="0" placeholder="Disabled input here..." disabled>
+
+        </div>-->
+        <div class="col-md-6" ><h4>Agregar imagen</h4>
+            <div class="form-group" ng-class="{ 'has-error': form.imagen.$dirty && form.imagen.$error.required }">
+                <input type="file" file-model="myFile" class="form-control" name="imagen" required/>
+                <span ng-show="form.imagen.$dirty && form.imagen.$error.required" class="help-block">La imagen es necesaria</span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="flash-message" ng-if="flash">
+                <div class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-actions">
+                <!-- <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Registro</button> -->
+                <button type="submit" class="btn btn-primary">Registro</button>
+                <a href="#/login" md-button class="md-raised md-warn">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

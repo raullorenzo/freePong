@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="administradorapp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="administradorapp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="administradorapp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="administradorapp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="../bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../bower_components/ng-table/dist/ng-table.css">
+
+    <link rel="stylesheet" href="../css/core.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../app.css">
+    <link href="../bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../bower_components/sweetalert/dist/sweetalert.css">
+
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span ng-model="login" class="navbar-brand"><strong>Bienvenido
+                administrador</strong>&nbsp;&nbsp;&nbsp;&nbsp;<span id="log">{{login}}</span></span>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <!--<li class="page-scroll">
+                    <a role="button" ui-sref="partidas">Ver Partidas</a>
+                </li>-->
+                <li class="page-scroll">
+                    <a role="button" ui-sref="mesas">Ver Mesas</a>
+                </li>
+                <li class="page-scroll">
+                    <a role="button" ui-sref="crearmesa">Crear mesa</a>
+                </li>
+                <li class="page-scroll">
+                    <a role="button" ui-sref="adminusuarios">Ver Usuarios</a>
+                </li>
+
+                <li>
+                    <a id="salir2" type="button" class="btn btn-danger" href="/">
+                        <i class="glyphicon glyphicon-log-out"></i>&nbsp;&nbsp;Salir
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div>
+    <ui-view class="scrolling"></ui-view>
+</div>
+
+<script src="../bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../bower_components/ng-table/dist/ng-table.js"></script>
+<script src="../bower_components/angular-resource/angular-resource.js"></script>
+<script src="../bower_components/sweetalert/dist/sweetalert.min.js"></script>
+<script src="../bower_components/angular-sweetalert/SweetAlert.js"></script>
+<script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="../bower_components/ng-file-upload/ng-file-upload.js"></script>
+<script src="../bower_components/angular-file-model/angular-file-model.js"></script>
+
+<script src="administradorapp.js"></script>
+<script src="vistaadminusuarios/adminusuariosctrl.js"></script>
+<script src="vistapartidas/partidasCtrl.js"></script>
+<script src="vistamesas/mesasctrl.js"></script>
+<script src="vistacrearmesa/crearmesactrl.js"></script>
+
+
+<script src="../components/version/version.js"></script>
+
+<script src="../components/version/version-directive.js"></script>
+<script src="../components/version/interpolate-filter.js"></script>
+
+</body>
+</html>

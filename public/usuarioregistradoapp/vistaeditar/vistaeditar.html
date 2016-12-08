@@ -1,0 +1,77 @@
+<form name="form" role="form">
+<div style="color:white" class="col-md-1">
+</div>
+<div style="color:white" class="col-md-5">
+    <h2>Usuario: {{login}} </h2>
+
+        <div class="form-group" ng-class="{ 'has-error': form.nombre.$dirty && form.nombre.$error.required }">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" class="form-control" ng-model="nombre"
+                   value="{{usuario.nombre}}" required/>
+            <span ng-show="form.nombre.$dirty && form.nombre.$error.required"
+                  class="help-block">El nombre es necesario</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.apellidos.$dirty && form.apellidos.$error.required }">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" name="apellidos" id="apellidos" class="form-control" ng-model="apellidos"
+                   value="{{usuario.apellidos}}" required/>
+            <span ng-show="form.apellidos.$dirty && form.apellidos.$error.required" class="help-block">Los apellidos son necesarios</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="form-control" ng-model="email" value="{{usuario.email}}"
+                   required/>
+            <span ng-show="form.email.$dirty && form.email.$error.required"
+                  class="help-block">El E-mail es necesario</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.telefono.$dirty && form.email.$error.required }">
+            <label for="telefono">Telefono</label>
+            <input type="text" name="telefono" id="telefono" class="form-control" ng-model="telefono"
+                   value="{{usuario.telefono}}" required/>
+            <span ng-show="form.telefono.$dirty && form.telefono.$error.required" class="help-block">El teléfono es necesario</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.login.$dirty && form.login.$error.required }" hidden>
+            <label for="loginc">Username</label>
+            <input type="text" name="loginc" id="loginc" class="form-control" ng-model="loginc"
+                   value="{{usuario.login}}" required/>
+            <span ng-show="form.login.$dirty && form.login.$error.required"
+                  class="help-block">El username es necesario</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="password"
+                   value="{{usuario.password}}" required/>
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">El password es necesario</span>
+        </div>
+        <!--<div class="form-group">
+            <label for="saldo">Saldo</label>
+            <input type="text" name="saldo" class="form-control" ng-model="saldo" value="{{usuario.saldo}}">
+        </div>-->
+        <div class="flash-message" ng-if="flash">
+            <div class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
+        </div>
+        <div class="form-actions">
+            <!-- <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Registro</button> -->
+            <button type="submit" class="btn btn-primary"
+                    ng-click="update(nombre,apellidos,email,telefono,loginc,password,saldo)">Actualizar
+            </button>
+            <a ui-sref="inicio" class="btn btn-danger">Volver</a>
+        </div>
+
+
+</div>
+<div class="col-md-1">
+</div>
+
+<div  style="color:white" class="col-md-4"><h3>Foto de perfil</h3>
+<br><br>
+    <img style="border: 5px solid black" src="{{urlfoto}}" height="300" width="350">
+    <!--<h4>Actualizar foto</h4>
+    <div class="form-group" ng-class="{ 'has-error': form.imagen.$dirty && form.imagen.$error.required }">
+        <input type="file" file-model="myFile" class="form-control" name="imagen" required/>
+    </div>-->
+</div>
+</div>
+<div class="col-md-1">
+</div>
+</form>

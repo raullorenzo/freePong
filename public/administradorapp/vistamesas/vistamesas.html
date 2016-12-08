@@ -1,0 +1,31 @@
+<div id="vistamesas">
+    <table class="table table-hover" ng-table="tableParams" show-filter="true">
+        <tr ng-repeat="mesa in $data">
+            <td data-title="'&nbsp;&nbsp;&nbsp;&nbsp;Foto'"><img src="{{mesa.urlfoto}}" height="42" width="42"></td>
+            <td data-title="'&nbsp;&nbsp;&nbsp;&nbsp;Nombre'" sortable="'nombre'" filter="{ 'nombre': 'text' }">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a class="nocolor" ng-click="editar(mesa)">{{mesa.nombre}}</a><br>
+            </td>
+            <td data-title="'&nbsp;&nbsp;&nbsp;&nbsp;Localizacion'" sortable="'localizacion'"
+                filter="{ 'localizacion': 'text' }">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a class="nocolor" ng-click="editar(mesa)">{{mesa.localizacion}}</a><br>
+            </td>
+
+
+            <td>
+                <div style="margin-left: 7%" class="table-actions">
+
+                    <button type="submit" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-trash" ng-click="delete(mesa._id)" aria-hidden="true"></span>
+                    </button>
+
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<!-- <div class="alert alert-warning text-center" data-ng-hide="!mesas.$resolved || mesas.length">
+    No existen mesas creadas. Por qué no <a ui-sref="crearMesa">creas una</a>?
+</div> -->
+<div class="alert alert-warning text-center" data-ng-hide="!mesas.length">
+    No existen mesas creadas. Por qué no <a ui-sref="crearmesa">creas una</a>?
+</div>
